@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #101010;
+  font-family: Verdana, sans-serif;
+}
+
+article {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero img {
+  width: 100%
+}
+
+.hero .cart {
+  background-color: #cecece;
+  border-radius: 15%;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 20;
+}
+
+.hero .cart .cartImg {
+  width: 50px;
+  margin: 1rem;
+  float: right
+}
+
+.hero .cart div {
+  max-width: 250px;
+  display: none;
+  margin: 2rem;
+  justify-content: space-between;
+}
+
+.hero .cart div:first-of-type {
+  margin-top: 2rem;
+}
+
+.hero .cart div input {
+  width: 2rem;
+  background-color: #cecece;
+  border: none;
+}
+
+.store-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #333333;
+  margin-top: -1rem;
+  padding-bottom: 3rem
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  background-color: white;
+  margin: 2rem
+}
+
+.card img {
+  padding-top: 1rem;
+  max-width: 100%;
+}
+
+.card h4, .card p {
+  margin: 1rem
+}
+
+.card .info {
+  margin-bottom: auto;
+}
+
+.card .price {
+  align-self: flex-end;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  transition: transform .25s ease;
+}
+
+.info-module {
+  display: none;
+  position: relative;
+}
+
+.info-module section {
+  width: 50vw;
+  height: 50vh;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  background-color: purple;
+  color: #cecece;
+  z-index: 4000;
+  animation: zoomIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-module section div {
+  margin-top: 3rem;
+}
+
+.choiseNo, .choiseYes {
+  padding: 1rem 2rem;
+  margin: 1rem;
+  font-weight: 700;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.info-module section h4 {
+  position: absolute;
+  padding: 1rem;
+  top: 2rem;
+  right: 2rem;
+  font-size: larger;
+  transition: all 1s ease;
+}
+
+
+.info-module section h4:hover {
+  transform: scale(2);
+  color: #101010;
+
+}
+
+footer {
+  max-width: 400px;
+  width: 100%;
+  margin: auto
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 0.75rem;
+  list-style: none;
+  padding: 2rem 1rem;
+}
+
+footer ul li {
+  margin: 1rem
+}
+
+footer ul a {
+  color: #cecece;
+  text-decoration: none;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
