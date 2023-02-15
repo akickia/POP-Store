@@ -1,8 +1,8 @@
-import { addToCart, renderCart, expandCart } from "./cart.js";
+import { addToCart, expandCart, closeCart } from "./cart.js";
 
 async function getPopcorns() {
   try {
-    let data = await fetch("products.json");
+    let data = await fetch("./products/products.json");
     data = await data.json()
     generateItems(data)
   }
@@ -10,11 +10,12 @@ async function getPopcorns() {
     console.log(error)
   }
 }
-
 getPopcorns()
-expandCart()
 
-
+let cartElement = document.querySelector(".cart")
+cartElement.addEventListener("click", () => {
+  expandCart()
+})
 
 function generateItems(data) {
   let storeContainer = document.querySelector(".store-container")
@@ -29,6 +30,7 @@ function generateItems(data) {
     `
     storeContainer.appendChild(newSection)
     newSection.addEventListener("click", () => {
+      closeCart()
       generateConfirmationModule(item)
     })
   })
@@ -51,11 +53,14 @@ function generateConfirmationModule(item) {
   `
   let closeBtn = document.querySelector(".closeBtn")
   let closeBtn2 = document.querySelector(".choiseNo")
+  let openBtn = document.querySelector(".choiseYes")
   closeBtn.addEventListener("click", () => {
     confirmationModule.style.display = "none"
   })
   closeBtn2.addEventListener("click", () => {
     confirmationModule.style.display = "none"
   })
+  openBtn.addEventListener("click", () => {
   addToCart(item)
+})
 }

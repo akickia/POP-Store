@@ -4,22 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="../style/style.css">
   <title>POP</title>
 </head>
 <body>
   <article class="hero">
-    <img src="img/poster.png">
-    <aside class="cart">
-    <img class="cartImg" src="img/cart.png">
-    </aside>
+    <img src="../img/poster.png">
     
   </article>
-  <article class="info-module">
-    <section></section>
-  </article>
-  <article class="store-container">
-    
+
+  <article class="checkout-container">
+    <section class="checkout-heading">
+      <h1>Varor:</h1>
+      <img class="cartImg" src="../img/cart.png">
+    </section>
+    <section class="itemsList"></section>
+    <section class="total">
+      <h5>Totalt:</h5>
+      <h6 id="totalNr"></h6>
+      <h6 id="totalCost"></h6>
+    </section>
   </article>
 
   <footer>
@@ -35,6 +39,6 @@
 
     </ul>
   </footer>
-  <script type="module" src="script/script.js"></script>
+  <script type="module" src="../script/checkout.js"></script>
 </body>
 </html>
