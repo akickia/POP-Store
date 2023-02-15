@@ -2,8 +2,8 @@ let items = []
 let price = []
 let total = 0 
 let cartElement = document.querySelector(".cart")
-let checkoutBtn = document.querySelector(".cart button");
-let totalEl = document.createElement("h4")
+let totalEl
+let checkoutBtn
 
 //Push item to list items and save in localstorage
 export let addToCart = (item) => {
@@ -15,6 +15,7 @@ export let addToCart = (item) => {
 //Expaning and closing cart depending on current value of width
 export let expandCart = () => {
     if (cartElement.style.width) {
+      removeChildren()
       closeCart()
     }
     else {
@@ -27,6 +28,7 @@ export let expandCart = () => {
     }
 }
 
+
 //Close cart by removing value for width and hide div's
 export let closeCart = () => {
   cartElement.style.width = ""
@@ -34,8 +36,6 @@ export let closeCart = () => {
   itemDivs.forEach(div => {
     div.style.display = "none"
   })
-  checkoutBtn.style.display = "none"
-  totalEl.style.display = "none"
 }
 
 
@@ -57,13 +57,7 @@ export let renderCart = () => {
     cartElement.appendChild(newItemEl)
   })  
   calcCost(price)
-  cartElement.appendChild(totalEl)
-  totalEl.innerHTML = `Totalt: ${total}kr`
-  totalEl.style.display = "flex"
-  checkoutBtn = document.createElement("button")
-  checkoutBtn.innerHTML = `<a href="pages/checkout.html">Gå till kassan</a>`
-  cartElement.appendChild(checkoutBtn)
-  checkoutBtn.style.display = "block"
+  showCartEl()
 }
 
 //calculate sum
@@ -74,5 +68,20 @@ function calcCost(array) {
   console.log(total)
 }
 
+//Show elements in UI
+function showCartEl() {
+  let createTotalEl = document.createElement("h4")
+  cartElement.appendChild(createTotalEl)
+  totalEl = document.querySelector(".cart h4")
+  totalEl.innerHTML = `Totalt: ${total}kr`
+  totalEl.style.display = "flex"
+  checkoutBtn = document.createElement("button")
+  checkoutBtn.innerHTML = `<a href="pages/checkout.html">Gå till kassan</a>`
+  cartElement.appendChild(checkoutBtn)
+  checkoutBtn.style.display = "block"
+}
 
-
+export let removeChildren = () => {
+  cartElement.removeChild(checkoutBtn)
+  cartElement.removeChild(totalEl)
+}

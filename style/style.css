@@ -54,6 +54,10 @@ input {
   border: none;
 }
 
+.hero .cart h4 {
+  display: none
+}
+
 .hero .cart button {
   display: none;
   position: absolute;

@@ -1,4 +1,4 @@
-import { addToCart, expandCart, closeCart } from "./cart.js";
+import { addToCart, expandCart, closeCart, removeChildren } from "./cart.js";
 
 //Fetching popcorns from json
 async function getPopcorns() {
@@ -35,6 +35,9 @@ function generateItems(data) {
     storeContainer.appendChild(newSection)
     //Make sections clickable and close cart on click if open
     newSection.addEventListener("click", () => {
+      if (cartElement.style.width) {
+      removeChildren()
+      }
       closeCart()
       generateConfirmationModule(item)
     })
