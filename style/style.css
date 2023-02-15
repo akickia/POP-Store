@@ -45,7 +45,7 @@ article {
 }
 
 .hero .cart div:last-of-type {
-  margin-bottom: 4.5rem;
+  margin-bottom: 6rem;
 }
 
 input {
@@ -55,25 +55,22 @@ input {
 }
 
 .hero .cart h4 {
-  display: none
+  display: none;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem
 }
 
 .hero .cart button {
   display: none;
   position: absolute;
-  padding: 0.5rem 1rem;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: #333333;
-  border-radius: 5px;
+  bottom: 0;
+  right: 0
 }
 
 .hero .cart button a {
   text-decoration: none;
   color:#cecece;
-  font-weight: 700;
-  letter-spacing: .25em;
-  text-transform: uppercase;
 }
 
 .store-container {
@@ -127,8 +124,8 @@ input {
   position: fixed;
   top: 25%;
   left: 33%;
-  background-color: purple;
-  color: #cecece;
+  background-color:#cecece;
+  color:#101010;
   z-index: 4000;
   animation: zoomIn 0.25s ease;
   display: flex;
@@ -143,10 +140,16 @@ input {
   margin-top: 3rem;
 }
 
-.choiseNo, .choiseYes {
-  padding: 1rem 2rem;
+button {
+  padding: 0.5rem 1rem;
+  background-color: #333333;
+  border-radius: 5px;
   margin: 1rem;
   font-weight: 700;
+  color:#cecece;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  transition: transform .25s ease;
 }
 
 button:hover {
@@ -196,8 +199,8 @@ footer ul a {
 /*Checkout-page*/
 .checkout-container {
   background-color: #cecece;
-  width: 90%;
-  min-height: 10rem;
+  max-width: 800px;
+  min-height: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -205,7 +208,8 @@ footer ul a {
 }
 
 .checkout-container article {
-  width: 100%
+  width: 100%;
+  margin: 2rem 0
 }
 
 .checkout-container section, .checkout-container article div {
@@ -216,6 +220,11 @@ footer ul a {
 
 .checkout-container img {
   width: 30px;
+}
+
+.checkout-container button {
+  align-self: center;
+
 }
 
 @keyframes zoomIn {
