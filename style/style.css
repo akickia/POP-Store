@@ -20,7 +20,7 @@ article {
 
 .hero .cart {
   background-color: #cecece;
-  border-radius: 15%;
+  border-radius: 15px;
   position: fixed;
   top: 2rem;
   right: 2rem;
@@ -44,10 +44,32 @@ article {
   margin-top: 2rem;
 }
 
-.hero .cart div input {
+.hero .cart div:last-of-type {
+  margin-bottom: 4.5rem;
+}
+
+input {
   width: 2rem;
   background-color: #cecece;
   border: none;
+}
+
+.hero .cart button {
+  display: none;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #333333;
+  border-radius: 5px;
+}
+
+.hero .cart button a {
+  text-decoration: none;
+  color:#cecece;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
 }
 
 .store-container {
@@ -178,9 +200,14 @@ footer ul a {
   padding: 1rem
 }
 
-.checkout-container section {
+.checkout-container article {
+  width: 100%
+}
+
+.checkout-container section, .checkout-container article div {
   display: flex;
   justify-content: space-between;
+  width: 100%
 }
 
 .checkout-container img {
