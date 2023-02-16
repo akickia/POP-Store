@@ -50,9 +50,16 @@ function generateConfirmationModule(item) {
   let confirmationModuleSection = document.querySelector(".info-module section")
   confirmationModule.style.display = "block"
   confirmationModuleSection.innerHTML = `
-  <h1>Vill du lägga till ${item.name} i kundvagnen?</h1>
+  <h2>${item.name}</h2>
   <h4 class="closeBtn">X</h4>
+  <img src="img/${item.img}" alt="${item.name}">
+  <p>Smak: ${item.characteristics.flavour}</p>
+  <p>Hårdhet: ${item.characteristics.hardness}</p>
+  <p>Storlek: ${item.characteristics.size}</p>
+  <h5>Mer info: ${item.desc}</h5>
+  <h3>Pris: ${item.pricePerHekto}kr/hg</h3>
   <div>
+  <h1>Vill du lägga till 1hg ${item.name} i kundvagnen?</h1>
   <button class="choiseYes">JA</button>
   <button class="choiseNo">NEJ</button>
   </div>

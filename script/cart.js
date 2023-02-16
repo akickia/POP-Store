@@ -1,5 +1,5 @@
-let items = []
 let price = []
+let items = JSON.parse(localStorage.getItem("items"))
 let total = 0 
 let cartElement = document.querySelector(".cart")
 let totalEl
@@ -7,7 +7,9 @@ let checkoutBtn
 
 //Push item to list items and save in localstorage
 export let addToCart = (item) => {
-    items.push(item)
+  if (items == null) {
+    items = []
+  } items.push(item)
     document.querySelector(".info-module").style.display = "none";
     localStorage.setItem("items", JSON.stringify(items))
 }
@@ -46,16 +48,19 @@ export let renderCart = () => {
   total = 0
   cartElement.innerHTML = `<img class="cartImg" src="img/cart.png">`
   let allItems = JSON.parse(localStorage.getItem("items"))
+  if (allItems) {
   allItems.forEach(item => {
     price.push(item.pricePerHekto)
-    console.log(price)
     let newItemEl = document.createElement("div")
     newItemEl.innerHTML = `
     <h5>${item.name}</h5> 
     <h5>${item.pricePerHekto}</h5>
+    <h5 class="remove">X</h5>
     `
     cartElement.appendChild(newItemEl)
-  })  
+  })}
+  let removeBtns = document.querySelectorAll(".remove")
+  remove(removeBtns, allItems)
   calcCost(price)
   showCartEl()
 }
@@ -65,7 +70,15 @@ function calcCost(array) {
   array.forEach(cost => {
     total += cost
   })
-  console.log(total)
+}
+
+function remove(removeBtns, allItems) {
+  removeBtns.forEach(removeBtn => {
+    removeBtn.addEventListener("click", () => {
+
+
+    })
+  })
 }
 
 //Show elements in UI

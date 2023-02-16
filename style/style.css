@@ -30,7 +30,8 @@ article {
 .hero .cart .cartImg {
   width: 50px;
   margin: 1rem;
-  float: right
+  float: right;
+  z-index: 3000;
 }
 
 .hero .cart div {
@@ -68,7 +69,7 @@ input {
   right: 0
 }
 
-.hero .cart button a {
+button a {
   text-decoration: none;
   color:#cecece;
 }
@@ -122,8 +123,9 @@ input {
 
 .info-module section {
   position: fixed;
-  top: 25%;
-  left: 33%;
+  top: 1rem;
+  left: 3rem;
+  right: 3rem;
   background-color:#cecece;
   color:#101010;
   z-index: 4000;
@@ -136,6 +138,17 @@ input {
   padding: 100px 5%
 }
 
+.info-module img {
+  width: 200px;
+  padding: 1rem;
+}
+
+.info-module h5 {
+  max-width: 500px;
+  font-weight: 400;
+  margin: 1rem
+}
+
 .info-module section div {
   margin-top: 3rem;
 }
@@ -143,13 +156,14 @@ input {
 button {
   padding: 0.5rem 1rem;
   background-color: #333333;
+  border: none;
   border-radius: 5px;
   margin: 1rem;
   font-weight: 700;
   color:#cecece;
   letter-spacing: .25em;
   text-transform: uppercase;
-  transition: transform .25s ease;
+  transition: all .25s ease;
 }
 
 button:hover {
@@ -164,7 +178,6 @@ button:hover {
   font-size: larger;
   transition: all 1s ease;
 }
-
 
 .info-module section h4:hover {
   transform: scale(2);
@@ -199,7 +212,7 @@ footer ul a {
 /*Checkout-page*/
 .checkout-container {
   background-color: #cecece;
-  max-width: 800px;
+  max-width: 500px;
   min-height: 15rem;
   display: flex;
   flex-direction: column;
@@ -215,17 +228,43 @@ footer ul a {
 .checkout-container section, .checkout-container article div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%
+}
+
+.checkout-container article .end {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.checkout-container article h4 {
+  margin: 1rem;
+  margin-right: 0;
 }
 
 .checkout-container img {
   width: 30px;
 }
 
-.checkout-container button {
-  align-self: center;
-
+.checkout-container .btns {
+  justify-content: space-evenly;
+  margin-top: 3rem;
 }
+
+.remove:hover {
+  transform: scale(1.4);
+  color:rgb(188, 0, 0);
+  transition: all .25s ease;
+}
+
+.back:hover {
+  background-color: rgb(134, 0, 0);
+}
+
+.payBtn:hover {
+  background-color: rgb(0, 134, 60);
+}
+
 
 @keyframes zoomIn {
   0% {
@@ -236,17 +275,10 @@ footer ul a {
   }
 }
 
-@media screen and (max-width: 800px ) {
-  .info-module section {
-    top: 25%;
-    left: 20%;
-  }
-}
 
 @media screen and (max-width: 500px ) {
   .info-module section {
-    top: 25%;
-    left: 0%;
-    width: 100%;
+    left: 1rem;
+    right:1rem;
   }
 }
