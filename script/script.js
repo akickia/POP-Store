@@ -11,7 +11,7 @@ cartImgElement.addEventListener("click", () => {
   expandCart()
 })
 
-// ------ FUNCTIONS ------
+// ------ FUNCTIONS -------
 //Fetching popcorns from json
 async function getPopcorns() {
   try {

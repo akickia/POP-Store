@@ -11,16 +11,18 @@ function createCartImg() {
   cartImgElement.setAttribute("src", "img/cart.png")
   cartImgElement.setAttribute("class", "cartImg" )
   cartElement.appendChild(cartImgElement)
-  cartImgElement.addEventListener("click", () => {
-    console.log("here")
-  expandCart()
+  cartImgElement.addEventListener("click", () => {  
+    expandCart()
 })}
 
 //Push chosen popcorn to list 
 export let addToCart = (item) => {
   if (allItems == null) {
     allItems = []
-  } allItems = JSON.parse(localStorage.getItem("allItems"))
+  } 
+  else {
+    allItems = JSON.parse(localStorage.getItem("allItems"))
+  }
     allItems.push(item)
     document.querySelector(".info-module").style.display = "none";
     //Set updated list to localstorage
