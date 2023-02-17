@@ -13,11 +13,34 @@ article {
   max-width: 1200px;
   margin: auto;
 }
+button {
+  padding: 0.5rem 1rem;
+  background-color: #333333;
+  border: none;
+  border-radius: 5px;
+  margin: 1rem;
+  font-weight: 700;
+  color:#cecece;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  transition: all .25s ease;
+}
 
+button:hover {
+  transform: scale(1.1);
+}
+
+button a {
+  text-decoration: none;
+  color:#cecece;
+}
+
+/*HERO*/
 .hero img {
   width: 100%
 }
 
+/*CART*/
 .hero .cart {
   background-color: #cecece;
   border-radius: 15px;
@@ -49,12 +72,6 @@ article {
   margin-bottom: 6rem;
 }
 
-input {
-  width: 2rem;
-  background-color: #cecece;
-  border: none;
-}
-
 .hero .cart h4 {
   display: none;
   margin: 8rem 0 1rem 1rem
@@ -67,11 +84,13 @@ input {
   right: 0
 }
 
-button a {
-  text-decoration: none;
-  color:#cecece;
+.removeBtn:hover {
+  transform: scale(1.4);
+  color:rgb(188, 0, 0);
+  transition: all .25s ease;
 }
 
+/*CARDS*/
 .store-container {
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +100,6 @@ button a {
   margin-top: -1rem;
   padding-bottom: 3rem
 }
-
 
 .card {
   display: flex;
@@ -114,16 +132,16 @@ button a {
   transition: transform .25s ease;
 }
 
-.info-module {
+/*MODULE*/
+.module {
   display: none;
-  position: relative;
 }
 
 .info-module section {
   position: fixed;
   top: 1rem;
-  left: 3rem;
-  right: 3rem;
+  left: 5rem;
+  right: 5rem;
   background-color:#cecece;
   color:#101010;
   z-index: 4000;
@@ -151,23 +169,6 @@ button a {
   margin-top: 3rem;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  background-color: #333333;
-  border: none;
-  border-radius: 5px;
-  margin: 1rem;
-  font-weight: 700;
-  color:#cecece;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  transition: all .25s ease;
-}
-
-button:hover {
-  transform: scale(1.1);
-}
-
 .info-module section h4 {
   position: absolute;
   padding: 1rem;
@@ -180,9 +181,9 @@ button:hover {
 .info-module section h4:hover {
   transform: scale(2);
   color: #101010;
-
 }
 
+/*FOOTER*/
 footer {
   max-width: 400px;
   width: 100%;
@@ -207,7 +208,9 @@ footer ul a {
   text-decoration: none;
 }
 
-/*Checkout-page*/
+
+
+/*CHECKOUT PAGE*/
 .checkout-container {
   background-color: #cecece;
   max-width: 500px;
@@ -227,12 +230,8 @@ footer ul a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%
-}
-
-.checkout-container article .end {
-  justify-content: flex-end;
-  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .checkout-container article h4 {
@@ -249,12 +248,6 @@ footer ul a {
   margin-top: 3rem;
 }
 
-.remove:hover {
-  transform: scale(1.4);
-  color:rgb(188, 0, 0);
-  transition: all .25s ease;
-}
-
 .back:hover {
   background-color: rgb(134, 0, 0);
 }
@@ -264,6 +257,7 @@ footer ul a {
 }
 
 
+/*KEYFRAMES*/
 @keyframes zoomIn {
   0% {
     transform: scale(0);
@@ -274,6 +268,7 @@ footer ul a {
 }
 
 
+/*MEDIA QUARIES*/
 @media screen and (max-width: 500px ) {
   .info-module section {
     left: 1rem;
