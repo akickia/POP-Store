@@ -1,22 +1,33 @@
+import { removeItem } from "./cart.js"
+
 let itemsList = document.querySelector(".itemsList")
-const price = []
 let totalCost = document.getElementById("totalCost")
 let payBtn = document.querySelector(".payBtn")
 
 
 function showCart() {
-let allItems = JSON.parse(localStorage.getItem("items"))
+let allItems = JSON.parse(localStorage.getItem("allItems"))
+const price = []
   allItems.forEach(item => {
     price.push(item.pricePerHekto)
     let newItemEl = document.createElement("div")
+    newItemEl.setAttribute("id", item.SerialNumber)
     newItemEl.innerHTML = `
     <h5>${item.name}</h5> 
     <div class="end">
     <h5>${item.pricePerHekto} kr/hg</h5>
-    <h4 class="remove">X</h4>
     </div>`
     itemsList.appendChild(newItemEl)
-
+    let removeBtn = document.createElement("h5")
+    removeBtn.innerHTML = "X"
+    newItemEl.appendChild(removeBtn)
+    removeBtn.setAttribute("id", item.SerialNumber)
+    removeBtn.addEventListener("click", (e) => {
+      removeItem(e, allItems)
+      itemsList.innerHTML = ""
+      console.log(allItems)
+      showCart()
+    })
   }) 
   calcCost(price)
 }
@@ -24,8 +35,8 @@ let allItems = JSON.parse(localStorage.getItem("items"))
 payBtn.addEventListener("click", () => {
   itemsList.innerHTML = `<h1>Tack för din order från POPstore!</h1>
   <h2>Dina varor är på väg!</h2>`
-  items = []
-  localStorage.setItem("items", JSON.stringify(items))
+  let allItems = []
+  localStorage.setItem("allItems", JSON.stringify(allItems))
 })
 
 
@@ -40,3 +51,5 @@ payBtn.addEventListener("click", () => {
   showCart()
 
 
+// idNumber = e.target.id
+// let index = allItems.findIndex(item => item.SerialNumber === idNumber)

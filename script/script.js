@@ -16,7 +16,8 @@ getPopcorns()
 
 //Eventlistener to expand and close cart
 let cartElement = document.querySelector(".cart")
-cartElement.addEventListener("click", () => {
+let cartImgElement = document.querySelector(".cart img")
+cartImgElement.addEventListener("click", () => {
   expandCart()
 })
 

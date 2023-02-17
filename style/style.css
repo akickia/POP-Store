@@ -57,9 +57,7 @@ input {
 
 .hero .cart h4 {
   display: none;
-  position: absolute;
-  bottom: 1.5rem;
-  left: 2rem
+  margin: 8rem 0 1rem 1rem
 }
 
 .hero .cart button {
